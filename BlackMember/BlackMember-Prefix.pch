@@ -1,0 +1,21 @@
+//
+//  BlackMember-Prefix.pch
+//  BlackMember
+//
+//  Created by qianfeng on 15/5/21.
+//  Copyright (c) 2015年 qianfeng. All rights reserved.
+//
+
+#ifndef BlackMember_BlackMember_Prefix_pch
+#define BlackMember_BlackMember_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "MBProgressHUD+MJ.h"
+#import "UIButton+Extension.h"
+#import "UIView+Extension.h"
+
+#define HMColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#endif
