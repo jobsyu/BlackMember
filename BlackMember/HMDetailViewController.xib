@@ -242,6 +242,9 @@
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jb1-UT-NNb">
                     <rect key="frame" x="420" y="0.0" width="180" height="600"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="mqk-N6-nG2"/>
+                    </connections>
                 </webView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hwS-wp-UwR">
                     <rect key="frame" x="500" y="290" width="20" height="20"/>

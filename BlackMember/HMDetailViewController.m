@@ -80,6 +80,8 @@
     
     [dpapi requestWithURL:@"v1/deal/get_single_deal" params:params delegate:self];
     
+    self.collectButton.selected = [HMDealTool isCollected:self.deal];
+    
 }
 
 
@@ -107,12 +109,20 @@
     [MBProgressHUD showMessage:@"网络繁忙,请稍后再试" toView:self.view];
 }
 
+/**
+ *  返回控制器支持的方向
+ */
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscape;
+}
+
 #pragma mark UIWebViewDelegate
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     if([webView.request.URL.absoluteString isEqualToString:self.deal.deal_h5_url])
     {
-        NSString *ID = [self.deal.deal_id substringFromIndex:[self.deal.deal_id rangeOfString:@"_"].location +1];
+        NSString *ID = [self.deal.deal_id substringFromIndex:[self.deal.deal_id rangeOfString:@"—"].location +1];
         NSString *url =  [NSString stringWithFormat:@"http://lite.m.dianping.com/group/deal/moreinfo/%@",ID];
         [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     }
@@ -159,6 +169,10 @@
         [MBProgressHUD showMessage:@"收藏成功" toView:self.view];
         info[HMIsCollectKey] = @YES;
     }
+    
+    self.collectButton.selected = !self.collectButton.selected;
+    
+    [HMNotificationCenter postNotificationName:HMCollectStateDidChangeNotification object:nil userInfo:self.deal];
        
 }
 
