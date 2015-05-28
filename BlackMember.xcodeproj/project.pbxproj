@@ -78,6 +78,7 @@
 		BC3C9B3E1B133C37007F7F23 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C9B3A1B133C37007F7F23 /* DPAPI.m */; };
 		BC3C9B3F1B133C37007F7F23 /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C9B3D1B133C37007F7F23 /* DPRequest.m */; };
 		BC3C9B411B133CEF007F7F23 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C9B401B133CEF007F7F23 /* Foundation+Log.m */; };
+		BCC136FF1B16BBDF00FBA542 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC136FE1B16BBDF00FBA542 /* libsqlite3.dylib */; };
 		BCC7C4551B0DB12E00A188B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC7C4541B0DB12E00A188B3 /* main.m */; };
 		BCC7C4581B0DB12E00A188B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC7C4571B0DB12E00A188B3 /* AppDelegate.m */; };
 		BCC7C4601B0DB12E00A188B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC7C45F1B0DB12E00A188B3 /* Images.xcassets */; };
@@ -248,6 +249,7 @@
 		BC3C9B3C1B133C37007F7F23 /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
 		BC3C9B3D1B133C37007F7F23 /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		BC3C9B401B133CEF007F7F23 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		BCC136FE1B16BBDF00FBA542 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BCC7C44F1B0DB12E00A188B3 /* BlackMember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackMember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC7C4531B0DB12E00A188B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC7C4541B0DB12E00A188B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC136FF1B16BBDF00FBA542 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +486,7 @@
 		BCC7C4461B0DB12E00A188B3 = {
 			isa = PBXGroup;
 			children = (
+				BCC136FE1B16BBDF00FBA542 /* libsqlite3.dylib */,
 				BCC7C4511B0DB12E00A188B3 /* BlackMember */,
 				BCC7C46B1B0DB12E00A188B3 /* BlackMemberTests */,
 				BCC7C4501B0DB12E00A188B3 /* Products */,

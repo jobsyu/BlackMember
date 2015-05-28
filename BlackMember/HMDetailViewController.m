@@ -13,6 +13,7 @@
 #import "HMRestrictions.h"
 #import "MJExtension.h"
 #import "MBProgressHUD+MJ.h"
+#import "HMDealTool.h"
 
 @interface HMDetailViewController () <UIWebViewDelegate,DPRequestDelegate>
 
@@ -140,6 +141,25 @@
         [self.loadingView stopAnimating];
     }
 
+}
+
+-(IBAction)collect
+{
+    NSMutableDictionary *info = [NSMutableDictionary dictionary];
+    info[HMCollectDealKey] = self.deal;
+    if(self.collectButton.selected) //取消收藏
+    {
+        [HMDealTool removeCollectDeal:self.deal];
+        [MBProgressHUD showMessage:@"取消收藏" toView:self.view];
+        info[HMIsCollectKey] = @NO;
+    }
+    else
+    {
+        [HMDealTool addCollectDeal:self.deal];
+        [MBProgressHUD showMessage:@"收藏成功" toView:self.view];
+        info[HMIsCollectKey] = @YES;
+    }
+       
 }
 
 @end

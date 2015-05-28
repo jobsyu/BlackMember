@@ -35,4 +35,6 @@
 @property (nonatomic,copy) NSString *purchase_deadline;
 /** 团购限制条件 */
 @property (nonatomic,strong) HMRestrictions *restrictions;
+
+//@property (nonatomic,strong ,setter=isCollected)
 @end

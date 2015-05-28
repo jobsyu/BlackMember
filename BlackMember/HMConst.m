@@ -14,3 +14,7 @@ NSString *const HMSelectSubcategoryName =@"HMSelectSubcategoryName";
 NSString *const HMRegionDidChangeNotification =@"HMRegionDidChangeNotification";
 NSString *const HMSelectRegion =@"HMSelectRegion";
 NSString *const HMSelectSubregionName =@"HMSelectSubregionName";
+
+NSString *const HMCollectStateDidChangeNotification = @"HMCollectStateDidChangeNotification";
+NSString *const HMIsCollectKey = @"HMIsCollectKey";
+NSString *const HMCollectDealKey = @"HMCollectDealKey";

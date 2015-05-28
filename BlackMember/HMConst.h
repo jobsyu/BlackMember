@@ -24,3 +24,7 @@ extern NSString *const HMSelectSubcategoryName;
 extern NSString *const HMRegionDidChangeNotification;
 extern NSString *const HMSelectRegion;
 extern NSString *const HMSelectSubregionName;
+
+extern NSString *const HMCollectStateDidChangeNotification;
+extern NSString *const HMIsCollectKey;
+extern NSString *const HMCollectDealKey;
