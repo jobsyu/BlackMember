@@ -78,6 +78,11 @@
     [HMNotificationCenter addObserver:self selector:@selector(categoryDidChange:) name:HMCategoryDidChangeNotification object:nil];
 }
 
+-(void)backToUserLocation
+{
+  
+}
+
 -(void)dealloc
 {
     [HMNotificationCenter removeObserver:self];
