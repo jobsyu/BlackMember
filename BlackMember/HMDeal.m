@@ -16,5 +16,10 @@
     return @{@"desc" : @"description"};
 }
 
+-(BOOL)isEqual:(HMDeal *)other
+{
+    return [self.deal_id isEqual:other.deal_id];
+}
+
 MJCodingImplementation
 @end

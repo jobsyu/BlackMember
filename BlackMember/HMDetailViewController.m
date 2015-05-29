@@ -34,12 +34,6 @@
 
 @implementation HMDetailViewController
 
-
-//-(void)setDeal:(HMDeal *)deal
-//{
-//    _deal = deal;
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -54,16 +48,17 @@
     self.webView.hidden = YES;
     [self.webView loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:self.deal.deal_h5_url]]];
     
-    //随时退，过期退
+    //设置剩余时间
     NSDateFormatter *frm = [[NSDateFormatter alloc] init];
     [frm setDateFormat:@"yyyy-MM-dd"];
     NSDate *deadtime = [frm dateFromString:self.deal.purchase_deadline];
+    //追加一天
     deadtime = [deadtime dateByAddingTimeInterval:24*60*60];
     
     NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute;
     NSDate *now =  [NSDate date];
     NSDateComponents * comps = [[NSCalendar currentCalendar] components:unit fromDate:now toDate:deadtime options:0];
-    
+    //剩余时间大于365天的
     if(comps.day>365)
     {
        [self.leftTimeButton setTitle:@"一年之内不过期" forState:UIControlStateNormal];
@@ -80,6 +75,7 @@
     
     [dpapi requestWithURL:@"v1/deal/get_single_deal" params:params delegate:self];
     
+    //设置收藏状态
     self.collectButton.selected = [HMDealTool isCollected:self.deal];
     
 }
@@ -99,6 +95,7 @@
 #pragma mark DPRequestDelegate
 -(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
 {
+    //设置退款信息
     self.deal = [HMDeal objectWithKeyValues:[result[@"deals"] firstObject]];
     self.refundableAnyTimeButton.selected = self.deal.restrictions.is_refundable;
     self.refundableExpireButton.selected = self.deal.restrictions.is_refundable;
@@ -157,23 +154,34 @@
 {
     NSMutableDictionary *info = [NSMutableDictionary dictionary];
     info[HMCollectDealKey] = self.deal;
+    
     if(self.collectButton.selected) //取消收藏
     {
         [HMDealTool removeCollectDeal:self.deal];
-        [MBProgressHUD showMessage:@"取消收藏" toView:self.view];
+        [MBProgressHUD showSuccess:@"取消收藏" toView:self.view];
         info[HMIsCollectKey] = @NO;
     }
     else
     {
         [HMDealTool addCollectDeal:self.deal];
-        [MBProgressHUD showMessage:@"收藏成功" toView:self.view];
+        [MBProgressHUD showSuccess:@"收藏成功" toView:self.view];
         info[HMIsCollectKey] = @YES;
     }
     
-    self.collectButton.selected = !self.collectButton.selected;
+    self.collectButton.selected = !self.collectButton.isSelected;
     
-    [HMNotificationCenter postNotificationName:HMCollectStateDidChangeNotification object:nil userInfo:self.deal];
+    [HMNotificationCenter postNotificationName:HMCollectStateDidChangeNotification object:nil userInfo:
+     info];
        
+}
+-(IBAction)share
+{
+   
+}
+
+-(IBAction)buy
+{
+   
 }
 
 @end

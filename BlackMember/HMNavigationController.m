@@ -25,14 +25,20 @@
     UINavigationBar *navBar = [UINavigationBar appearance];
     [navBar setBackgroundImage:[UIImage imageNamed:@"bg_navigationBar_normal"] forBarMetrics:UIBarMetricsDefault];
     
-    UIBarButtonItem *item = [UIBarButtonItem appearance];
-    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSForegroundColorAttributeName] =HMColor(29, 177, 157);
-    [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
+//    UIBarButtonItem *item = [UIBarButtonItem appearance];
+//    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+//    attrs[NSForegroundColorAttributeName] =HMColor(21, 188, 173);
+//    [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
+//    
+//    NSMutableDictionary *disableAttrs = [NSMutableDictionary dictionary];
+//    disableAttrs[NSForegroundColorAttributeName] = [UIColor grayColor];
+//    [item setTitleTextAttributes:disableAttrs forState:UIControlStateDisabled];
     
-    NSMutableDictionary *disableAttrs = [NSMutableDictionary dictionary];
-    disableAttrs[NSForegroundColorAttributeName] = HMColor(210, 210, 210);
-    [item setTitleTextAttributes:disableAttrs forState:UIControlStateNormal];
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName : HMColor(21, 188, 173) } forState:UIControlStateNormal];
+    
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor grayColor] } forState:UIControlStateDisabled];
+    
 }
 
 - (void)didReceiveMemoryWarning {

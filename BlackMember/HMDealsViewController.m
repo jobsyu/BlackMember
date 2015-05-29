@@ -17,6 +17,7 @@
 #import "MBProgressHUD+MJ.h"
 #import "HMDetailViewController.h"
 #import "HMNavigationController.h"
+#import "HMDealTool.h"
 
 @interface HMDealsViewController () <DPRequestDelegate>
 
@@ -202,6 +203,7 @@ static NSString * const reuseIdentifier = @"deal";
 {
     HMDetailViewController *detailVC = [[HMDetailViewController alloc] init];
     detailVC.deal = self.deals[indexPath.row];
+    [HMDealTool addRecentDeal:detailVC.deal];
     [self presentViewController:detailVC animated:YES completion:nil];
 }
 

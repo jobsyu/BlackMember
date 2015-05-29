@@ -37,7 +37,7 @@
     
     self.title = @"切换城市";
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"btn_navigation_close" highImageName:@"btn_navigation_close_hl" target:self action:@selector(close)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(close) image:@"btn_navigation_close" highImage:@"btn_navigation_close_hl"];
     
     self.tableView.sectionIndexColor = [UIColor blackColor];
     //加载城市数据

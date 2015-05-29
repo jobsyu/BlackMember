@@ -24,8 +24,15 @@
 #import "MJExtension.h"
 #import "MJRefresh.h"
 #import "HMDealCell.h"
+#import "AwesomeMenu.h"
+#import "UIView+AutoLayout.h"
+#import "HMNavigationController.h"
+#import "HMCollectViewController.h"
+#import "HMRecentViewController.h"
+#import "HMSearchViewController.h"
+#import "HMMapViewController.h"
 
-@interface HMHomeViewController ()
+@interface HMHomeViewController ()<AwesomeMenuDelegate>
 
 //** 顶部菜单 */
 //** 分类菜单 */
@@ -69,6 +76,8 @@
     //设置导航栏右边的内容
     [self setupNavRight];
     
+    //创建awesomemenu
+    [self setupAwesomeMenu];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -100,6 +109,84 @@
     
     //监听排序改变
     [HMNotificationCenter addObserver:self selector:@selector(sortDidChange:) name:HMSortDidChangeNotification object:nil];
+}
+
+-(void)setupAwesomeMenu
+{
+    //1.中间的item
+    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"icon_pathMenu_background_highlighted"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"] highlightedContentImage:nil];
+    
+    //2.周边的item
+    AwesomeMenuItem *item0 = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_highlighted"]];
+    AwesomeMenuItem *item1 = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_highlighted"]];
+    AwesomeMenuItem *item2 = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_mine_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_mine_highlighted"]];
+    AwesomeMenuItem *item3 = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_more_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_more_highlighted"]];
+    
+    NSArray *items = @[item0,item1,item2,item3];
+    
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:CGRectZero startItem:startItem optionMenus:items];
+    menu.alpha = 0.5;
+    //设置菜单的活动范围
+    menu.menuWholeAngle = M_PI_2;
+    //设置开始按钮的位置
+    menu.startPoint = CGPointMake(50, 150);
+    //设置代理
+    menu.delegate = self;
+    //不要旋转中间按钮
+    menu.rotateAddButton = NO;
+    [self.view addSubview:menu];
+    
+    //设置菜单永远在左下角
+    [menu autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
+    [menu autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
+    [menu autoSetDimensionsToSize:CGSizeMake(200, 200)];
+}
+
+#pragma mark -AwesomeMenuDelegate
+-(void)awesomeMenuDidFinishAnimationOpen:(AwesomeMenu *)menu
+{
+    //替换菜单的图片
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_cross_normal"];
+    
+    //完全显示
+    menu.alpha = 1.0;
+    
+}
+
+-(void)awesomeMenuDidFinishAnimationClose:(AwesomeMenu *)menu
+{
+    //替换菜单的图片
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
+    
+    //半透明显示
+    menu.alpha = 0.5;
+    
+}
+
+-(void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    //半透明显示
+    menu.alpha= 0.5;
+    
+    //替换菜单的图片
+    menu.contentImage = [ UIImage imageNamed:@"icon_pahMenu_main_Mine_normal"];
+    
+    switch (idx) {
+        case 0: { //收藏
+            HMNavigationController *nav = [[HMNavigationController alloc] initWithRootViewController:[[HMCollectViewController alloc] init]];
+            [self presentViewController:nav animated:YES completion:nil];
+            break;
+        }
+        
+        case 1: { //最近访问记录
+            HMNavigationController *nav = [[HMNavigationController alloc] initWithRootViewController:[[HMRecentViewController alloc] init]];
+            [self presentViewController:nav animated:YES completion:nil];
+            break;
+        }
+   
+        default:
+            break;
+    }
 }
 
 /** 设置请求参数 实现父类的方法 */
@@ -245,7 +332,7 @@
 -(void)setupNavLeft
 {
     //1.LOGO
-    UIBarButtonItem *logoItem = [UIBarButtonItem itemWithImageName:@"icon_meituan_logo" highImageName:@"icon_meituan_logo" target:nil action:nil];
+    UIBarButtonItem *logoItem = [UIBarButtonItem itemWithTarget:nil action:nil image:@"icon_meituan_logo" highImage:@"icon_meituan_logo"];
     logoItem.customView.userInteractionEnabled = NO;
     
     //2.分类
@@ -278,14 +365,12 @@
 -(void)setupNavRight
 {
     //1.地图
-    UIBarButtonItem *mapItem = [UIBarButtonItem itemWithImageName:@"icon_map" highImageName:@"icon_map_highlighted" target:self action:@selector(mapClick)];
-    mapItem.customView.width = 50;
-    mapItem.customView.height = 27;
+    UIBarButtonItem *mapItem = [UIBarButtonItem itemWithTarget:self action:@selector(mapClick) image:@"icon_map" highImage:@"icon_map_highlighted"];
+    mapItem.customView.width = 60;
     
     //2.搜索
-    UIBarButtonItem *searchItem = [UIBarButtonItem itemWithImageName:@"icon_search" highImageName:@"icon_search_highlighted" target:self action:@selector(searchClick)];
-    searchItem.customView.width = mapItem.customView.width;
-    searchItem.customView.height = mapItem.customView.height;
+    UIBarButtonItem *searchItem = [UIBarButtonItem itemWithTarget:self action:@selector(searchClick) image:@"icon_search" highImage:@"icon_search_highlighted"];
+    searchItem.customView.width = 60;
     
     self.navigationItem.rightBarButtonItems = @[mapItem,searchItem];
 }
@@ -323,12 +408,24 @@
 
 -(void)mapClick
 {
-    
+    HMNavigationController *nav = [[HMNavigationController alloc] initWithRootViewController:[[HMMapViewController alloc] init]];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 -(void)searchClick
 {
-   
+    if (self.selectedCityName) {
+        HMSearchViewController *searchVC = [[HMSearchViewController alloc] init];
+        searchVC.selectCityName = self.selectedCityName;
+        
+        HMNavigationController  *nav = [[HMNavigationController alloc] initWithRootViewController:searchVC];
+        
+        [self presentViewController:nav animated:YES completion:nil];
+    }
+    else
+    {
+        [MBProgressHUD showMessage:@"请选择城市后再搜索" toView:self.view];
+    }
 }
 
 @end

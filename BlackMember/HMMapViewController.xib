@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HMMapViewController">
+            <connections>
+                <outlet property="mapView" destination="8rQ-q3-Fdo" id="VHA-Y5-znC"/>
+                <outlet property="view" destination="i0d-ng-xQs" id="Xu7-5r-uRZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i0d-ng-xQs">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLv-tD-M00">
+                    <rect key="frame" x="20" y="510" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="4hz-71-qE1"/>
+                        <constraint firstAttribute="width" constant="70" id="mXl-OT-fAg"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="icon_map_location">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="icon_map_location_highlighted"/>
+                </button>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8rQ-q3-Fdo">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="kR2-7s-hDH"/>
+                    </connections>
+                </mapView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zLv-tD-M00" firstAttribute="leading" secondItem="i0d-ng-xQs" secondAttribute="leading" constant="20" id="1od-o1-Fke"/>
+                <constraint firstAttribute="bottom" secondItem="zLv-tD-M00" secondAttribute="bottom" constant="20" id="Iov-To-Cvp"/>
+                <constraint firstAttribute="trailing" secondItem="8rQ-q3-Fdo" secondAttribute="trailing" id="RSK-Om-qkI"/>
+                <constraint firstAttribute="bottom" secondItem="8rQ-q3-Fdo" secondAttribute="bottom" id="gDj-qX-WJc"/>
+                <constraint firstItem="8rQ-q3-Fdo" firstAttribute="top" secondItem="i0d-ng-xQs" secondAttribute="top" id="hGM-FZ-sUm"/>
+                <constraint firstItem="8rQ-q3-Fdo" firstAttribute="leading" secondItem="i0d-ng-xQs" secondAttribute="leading" id="ilf-nr-7kf"/>
+            </constraints>
+            <point key="canvasLocation" x="628" y="387"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_map_location" width="70" height="70"/>
+        <image name="icon_map_location_highlighted" width="70" height="70"/>
+    </resources>
+</document>

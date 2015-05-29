@@ -10,6 +10,14 @@
 #import <Foundation/Foundation.h>
 @class HMDeal ,HMDealCell;
 
+@protocol HMDealCellDelegate <NSObject>
+
+@optional
+-(void)dealCellCheckingStateDidChange:(HMDealCell *)cell;
+
+@end
+
 @interface HMDealCell : UICollectionViewCell
 @property (nonatomic,strong) HMDeal *deal;
+@property (nonatomic,weak) id<HMDealCellDelegate> delegate;
 @end

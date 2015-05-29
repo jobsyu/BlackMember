@@ -78,7 +78,14 @@
 		BC3C9B3E1B133C37007F7F23 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C9B3A1B133C37007F7F23 /* DPAPI.m */; };
 		BC3C9B3F1B133C37007F7F23 /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C9B3D1B133C37007F7F23 /* DPRequest.m */; };
 		BC3C9B411B133CEF007F7F23 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C9B401B133CEF007F7F23 /* Foundation+Log.m */; };
+		BC3EA4A41B17FB000058A485 /* HMRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EA4A31B17FB000058A485 /* HMRecentViewController.m */; };
+		BC3EA4A91B18429A0058A485 /* HMSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EA4A81B18429A0058A485 /* HMSearchViewController.m */; };
+		BC3EA4B01B1849920058A485 /* HMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EA4AE1B1849920058A485 /* HMMapViewController.m */; };
+		BC3EA4B11B1849920058A485 /* HMMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3EA4AF1B1849920058A485 /* HMMapViewController.xib */; };
+		BC3EA4B41B1857920058A485 /* HMBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EA4B31B1857920058A485 /* HMBusiness.m */; };
+		BC3EA4B71B1858AF0058A485 /* HMDealAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EA4B61B1858AF0058A485 /* HMDealAnnotation.m */; };
 		BCC136FF1B16BBDF00FBA542 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC136FE1B16BBDF00FBA542 /* libsqlite3.dylib */; };
+		BCC137041B16E61F00FBA542 /* HMCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC137031B16E61F00FBA542 /* HMCollectViewController.m */; };
 		BCC7C4551B0DB12E00A188B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC7C4541B0DB12E00A188B3 /* main.m */; };
 		BCC7C4581B0DB12E00A188B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC7C4571B0DB12E00A188B3 /* AppDelegate.m */; };
 		BCC7C4601B0DB12E00A188B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC7C45F1B0DB12E00A188B3 /* Images.xcassets */; };
@@ -249,7 +256,20 @@
 		BC3C9B3C1B133C37007F7F23 /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
 		BC3C9B3D1B133C37007F7F23 /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		BC3C9B401B133CEF007F7F23 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		BC3EA4A21B17FB000058A485 /* HMRecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMRecentViewController.h; sourceTree = "<group>"; };
+		BC3EA4A31B17FB000058A485 /* HMRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMRecentViewController.m; sourceTree = "<group>"; };
+		BC3EA4A71B18429A0058A485 /* HMSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSearchViewController.h; sourceTree = "<group>"; };
+		BC3EA4A81B18429A0058A485 /* HMSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSearchViewController.m; sourceTree = "<group>"; };
+		BC3EA4AD1B1849920058A485 /* HMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMapViewController.h; sourceTree = "<group>"; };
+		BC3EA4AE1B1849920058A485 /* HMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMapViewController.m; sourceTree = "<group>"; };
+		BC3EA4AF1B1849920058A485 /* HMMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMMapViewController.xib; sourceTree = "<group>"; };
+		BC3EA4B21B1857920058A485 /* HMBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBusiness.h; sourceTree = "<group>"; };
+		BC3EA4B31B1857920058A485 /* HMBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBusiness.m; sourceTree = "<group>"; };
+		BC3EA4B51B1858AF0058A485 /* HMDealAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDealAnnotation.h; sourceTree = "<group>"; };
+		BC3EA4B61B1858AF0058A485 /* HMDealAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDealAnnotation.m; sourceTree = "<group>"; };
 		BCC136FE1B16BBDF00FBA542 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		BCC137021B16E61F00FBA542 /* HMCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCollectViewController.h; sourceTree = "<group>"; };
+		BCC137031B16E61F00FBA542 /* HMCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCollectViewController.m; sourceTree = "<group>"; };
 		BCC7C44F1B0DB12E00A188B3 /* BlackMember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackMember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC7C4531B0DB12E00A188B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC7C4541B0DB12E00A188B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -483,6 +503,87 @@
 			path = dianpingapi;
 			sourceTree = "<group>";
 		};
+		BC3EA4A01B17FA0D0058A485 /* Recent */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EA4A11B17FA1E0058A485 /* Controller */,
+			);
+			name = Recent;
+			sourceTree = "<group>";
+		};
+		BC3EA4A11B17FA1E0058A485 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EA4A21B17FB000058A485 /* HMRecentViewController.h */,
+				BC3EA4A31B17FB000058A485 /* HMRecentViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BC3EA4A51B1842450058A485 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EA4A61B1842540058A485 /* Controller */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		BC3EA4A61B1842540058A485 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EA4A71B18429A0058A485 /* HMSearchViewController.h */,
+				BC3EA4A81B18429A0058A485 /* HMSearchViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BC3EA4AA1B1849460058A485 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EA4AC1B1849590058A485 /* Controller */,
+				BC3EA4AB1B1849500058A485 /* Model */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		BC3EA4AB1B1849500058A485 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EA4B21B1857920058A485 /* HMBusiness.h */,
+				BC3EA4B31B1857920058A485 /* HMBusiness.m */,
+				BC3EA4B51B1858AF0058A485 /* HMDealAnnotation.h */,
+				BC3EA4B61B1858AF0058A485 /* HMDealAnnotation.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BC3EA4AC1B1849590058A485 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EA4AD1B1849920058A485 /* HMMapViewController.h */,
+				BC3EA4AE1B1849920058A485 /* HMMapViewController.m */,
+				BC3EA4AF1B1849920058A485 /* HMMapViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BCC137001B16E5D300FBA542 /* Collect */ = {
+			isa = PBXGroup;
+			children = (
+				BCC137011B16E5E500FBA542 /* Controller */,
+			);
+			name = Collect;
+			sourceTree = "<group>";
+		};
+		BCC137011B16E5E500FBA542 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCC137021B16E61F00FBA542 /* HMCollectViewController.h */,
+				BCC137031B16E61F00FBA542 /* HMCollectViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		BCC7C4461B0DB12E00A188B3 = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +606,10 @@
 		BCC7C4511B0DB12E00A188B3 /* BlackMember */ = {
 			isa = PBXGroup;
 			children = (
+				BC3EA4AA1B1849460058A485 /* Map */,
+				BC3EA4A51B1842450058A485 /* Search */,
+				BC3EA4A01B17FA0D0058A485 /* Recent */,
+				BCC137001B16E5D300FBA542 /* Collect */,
 				BC374A721B149E2100B4FE75 /* Detail */,
 				BCC7C48F1B0DCB5100A188B3 /* Other */,
 				BCC7C4811B0DBDEA00A188B3 /* Home */,
@@ -805,6 +910,7 @@
 				BCC7C48E1B0DC5A600A188B3 /* HMHomeTopItem.xib in Resources */,
 				BCC7C4B41B0DF5E900A188B3 /* HMHomeDropdown.xib in Resources */,
 				BC39AEC51B0EC4B400505C4E /* cityGroups.plist in Resources */,
+				BC3EA4B11B1849920058A485 /* HMMapViewController.xib in Resources */,
 				BCC7C49C1B0DCED900A188B3 /* MBProgressHUD.bundle in Resources */,
 				BC39AEC41B0EC4B400505C4E /* cities.plist in Resources */,
 				BC39AEC31B0EC4B400505C4E /* categories.plist in Resources */,
@@ -846,15 +952,20 @@
 				BC374A5F1B146E7100B4FE75 /* HMCenterLineLabel.m in Sources */,
 				BC39AEEA1B0ECF3200505C4E /* MJMember.m in Sources */,
 				BC374A401B1443F600B4FE75 /* UIImage+WebP.m in Sources */,
+				BC3EA4B01B1849920058A485 /* HMMapViewController.m in Sources */,
 				BC39AEC91B0EC53100505C4E /* HMCategory.m in Sources */,
 				BCC7C48C1B0DC4CB00A188B3 /* HMHomeTopItem.m in Sources */,
+				BC3EA4B41B1857920058A485 /* HMBusiness.m in Sources */,
 				BCC7C4AC1B0DD85500A188B3 /* HMHomeDropdown.m in Sources */,
+				BCC137041B16E61F00FBA542 /* HMCollectViewController.m in Sources */,
 				BCC7C4881B0DBF4F00A188B3 /* HMHomeViewController.m in Sources */,
 				BC39AEBA1B0EB64100505C4E /* UIView+Extension.m in Sources */,
 				BCC7C4931B0DCC2300A188B3 /* UIBarButtonItem+Extension.m in Sources */,
 				BC374A761B149E5300B4FE75 /* HMDetailViewController.m in Sources */,
 				BC388A991B15CA0200E6FEEA /* FMDatabaseAdditions.m in Sources */,
 				BC374A561B1450C700B4FE75 /* MJRefreshBaseView.m in Sources */,
+				BC3EA4A91B18429A0058A485 /* HMSearchViewController.m in Sources */,
+				BC3EA4B71B1858AF0058A485 /* HMDealAnnotation.m in Sources */,
 				BC39AEFC1B0F2B0000505C4E /* HMCityViewController.m in Sources */,
 				BC3C9B311B12F5B9007F7F23 /* HMCitySearchResultViewController.m in Sources */,
 				BCC7C4581B0DB12E00A188B3 /* AppDelegate.m in Sources */,
@@ -877,6 +988,7 @@
 				BC374A3F1B1443F600B4FE75 /* UIImage+MultiFormat.m in Sources */,
 				BC374A381B1443F600B4FE75 /* SDWebImageDecoder.m in Sources */,
 				BCC7C4B21B0DF31F00A188B3 /* HMDropdownSubCell.m in Sources */,
+				BC3EA4A41B17FB000058A485 /* HMRecentViewController.m in Sources */,
 				BCC7C4A81B0DD78300A188B3 /* HMRegion.m in Sources */,
 				BC388A9B1B15CA0200E6FEEA /* FMDatabaseQueue.m in Sources */,
 				BC39AF011B0F323C00505C4E /* HMRegionViewController.m in Sources */,
@@ -1012,7 +1124,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BlackMember/BlackMember-Prefix.pch";
 				INFOPLIST_FILE = BlackMember/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1025,7 +1137,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BlackMember/BlackMember-Prefix.pch";
 				INFOPLIST_FILE = BlackMember/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;

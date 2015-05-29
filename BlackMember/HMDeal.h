@@ -36,6 +36,12 @@
 @property (nonatomic,copy) NSString *purchase_deadline;
 /** 团购限制条件 */
 @property (nonatomic,strong) HMRestrictions *restrictions;
+/** 是否正在被编辑 */
+@property (nonatomic,assign,getter=isChecking) BOOL checking;
+/*是否被勾选了 */
+@property (nonatomic,assign,getter=isEditing) BOOL editing;
 
-//@property (nonatomic,strong ,setter=isCollected)
+
+@property (nonatomic,strong) NSArray *businesses;
+@property (nonatomic,strong) NSArray *categories;
 @end

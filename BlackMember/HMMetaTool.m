@@ -11,6 +11,7 @@
 #import "MJExtension.h"
 #import "HMCity.h"
 #import "HMSort.h"
+#import "HMDeal.h"
 
 @implementation HMMetaTool
 
@@ -69,6 +70,18 @@ static NSArray *_sorts;
         _sorts = [HMSort objectArrayWithFilename:@"sorts.plist"];
     }
     return _sorts;
+}
+
++(HMCategory *)categoryWithDeal:(HMDeal *)deal
+{
+    NSArray *cs = [self categories];
+    NSString *cname = [deal.categories firstObject];
+    for (HMCategory *c in cs) {
+        if ([cname isEqualToString:c.name]) return c;
+        if ([c.subcategories containsObject:cname]) return c;
+        
+    }
+    return nil;
 }
 
 @end

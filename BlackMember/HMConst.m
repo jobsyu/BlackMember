@@ -18,3 +18,10 @@ NSString *const HMSelectSubregionName =@"HMSelectSubregionName";
 NSString *const HMCollectStateDidChangeNotification = @"HMCollectStateDidChangeNotification";
 NSString *const HMIsCollectKey = @"HMIsCollectKey";
 NSString *const HMCollectDealKey = @"HMCollectDealKey";
+
+NSString *const HMRecentStateDidChangeNotification = @"HMRecentStateDidChangeNotification";
+NSString *const HMIsRecentKey =@"HMIsRecentKey";
+NSString *const HMRecentDealKey =@"HMRecentDealKey";
+
+NSString *const HMedit = @"编辑";
+NSString *const HMdone = @"完成";

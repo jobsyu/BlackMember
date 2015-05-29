@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *purchaseCountLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIImageView *dealNewView;
+@property (weak, nonatomic) IBOutlet UIButton *cover;
+@property (weak, nonatomic) IBOutlet UIImageView *checkView;
+- (IBAction)coverClick;
 
 @end
 
@@ -56,8 +59,15 @@
     NSDateFormatter *date = [[NSDateFormatter alloc] init];
     date.dateFormat = @"yyyy-MM-dd";
     NSString *nowtime = [date stringFromDate:[NSDate date]];
-
+    
+    //新单的显示和隐藏
     self.dealNewView.hidden = ([deal.publish_date compare:nowtime] == NSOrderedAscending);
+    
+    //是否编辑
+    self.cover.hidden = !deal.isEditing;
+    //是否选中
+    self.checkView.hidden = !deal.isChecking;
+    
 }
 
 -(void)drawRect:(CGRect)rect
@@ -65,4 +75,15 @@
     [[UIImage imageNamed:@"bg_dealcell"] drawInRect:rect];
 }
 
+- (IBAction)coverClick {
+    //
+    self.deal.checking = !self.deal.isChecking;
+    //直接修改状态
+    self.checkView.hidden = !self.checkView.isHidden;
+    
+    if([self.delegate respondsToSelector:@selector(dealCellCheckingStateDidChange:)])
+    {
+        [self.delegate dealCellCheckingStateDidChange:self];
+    }
+}
 @end
